@@ -13,7 +13,15 @@ class Game{
             Scanner S = new Scanner(System.in);
             userInput = S.nextInt();
             noOFGuesses ++;
+            
+            if (noOFGuesses == 10){
+                System.out.println("Guess limit exceeded \n ;_; \n YOU LOST");
+                exit();
+            }
+
         }
+    
+    // to generate random number in range 0 to 100
 
         public  Game () {
             Random rn = new Random();
@@ -35,7 +43,8 @@ class Game{
 
         void getNumOfGuesses(){
             int n = noOFGuesses;
-            System.out.println("!!!YAY!!! \n You got it in " + n + " tries" );
+            int score = 10 - n;
+            System.out.println("!!!YAY!!! \n You got it \n Your score is:"+score);
         }
 }
 
